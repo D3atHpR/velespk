@@ -10,4 +10,10 @@ npm install velespk
 
 ```
 
+use para criar o projeto com o esqueleto já pronto
+```
+velespk-init
+
+```
+
 Documentação ainda em Criação.

@@ -1,11 +1,14 @@
 {
   "name": "velespk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Pacote destinado a criação rápida de chatbots para Whatsapp",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "velespk-init": "./init.js"
   },
   "repository": {
     "type": "git",
