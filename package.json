@@ -1,0 +1,28 @@
+{
+  "name": "velespk",
+  "version": "1.0.0",
+  "description": "Pacote destinado a criação rápida de chatbots para Whatsapp",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/D3atHpR/velespk.git"
+  },
+  "keywords": [
+    "chatbots",
+    "Whatsapp"
+  ],
+  "author": "D3x",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/D3atHpR/velespk/issues"
+  },
+  "homepage": "https://github.com/D3atHpR/velespk#readme",
+  "dependencies": {
+    "qrcode-terminal": "^0.12.0",
+    "whatsapp-web.js": "^1.21.0"
+  }
+}
