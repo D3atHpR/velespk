@@ -1,6 +1,6 @@
 {
   "name": "velespk",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Pacote destinado a criação rápida de chatbots para Whatsapp",
   "main": "index.js",
   "scripts": {
