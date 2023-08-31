@@ -31,7 +31,7 @@ Para Utilizar o `client.on` você declara ele juntamente com o `client` no `waMa
 
 Lembre-se o `client.on` agora usa a sintaxe `clo`.
 ```javascript
-const waMain = require('./waMain');
+const { waMain } = require('velespk');
 
 const { client, clo } = waMain({
     // ... opções aqui ...
@@ -115,7 +115,7 @@ To use `client.on` you declare it together with `client` in `waMain`.
 
 Remember `client.on` now uses the `clo` syntax.
 ```javascript
-const waMain = require('./waMain');
+const { waMain } = require('velespk');
 
 const { client, clo } = waMain({
      // ... options here ...
