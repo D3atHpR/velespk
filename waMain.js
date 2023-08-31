@@ -1,7 +1,8 @@
-const {Client, LocalAuth,} = require ('whatsapp-web.js')
+const {Client, LocalAuth} = require ('whatsapp-web.js')
 const qrcode = require('qrcode-terminal')
 
 function waMain(options) {
+
     const {modules, ...puppeteerOptions} = options;
     const client = new Client({
         authStrategy: new LocalAuth(),
@@ -10,7 +11,17 @@ function waMain(options) {
             args: ['--no-sandbox'],
             ...puppeteerOptions
         }
-    })
+    });
+
+    function clo(eventType, handler) {
+        client.on(eventType, async (message)=>{
+           if(handler.constructor.name ==='AsyncFuction'){
+            await handler(message);
+            }else{
+                handler(message);
+            }
+        });
+    }
 
     client.on('qr', qr => {
         qrcode.generate(qr, { small: true });
@@ -26,7 +37,9 @@ function waMain(options) {
 
     client.initialize();
 
-    return {client, ...modules};
+    return {client, clo, ...options.modules};
 }
 
 module.exports = waMain;
+
+

@@ -7,6 +7,7 @@ interface WaMainOptions {
 
 interface WaMainResult {
     client: Client;
+    clo<T extends(message: any)=>Promise<void> | void>(eventType: string, handler: T): void;
     [key: string]: any;
 }
 

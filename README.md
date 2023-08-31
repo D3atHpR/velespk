@@ -20,12 +20,34 @@ Para configurar o cliente, chame a função `waMain` com as opções desejadas:
 ```javascript
 const { waMain } = require('velespk');
 
-const {client, MessageMedia} = waMain({
-    modules: {MessageMedia},
+const {client, seuModule} = waMain({
+    modules: {seuModule},
     executablePath: 'path/to/chrome'
 });
 ```
 A função waMain aceita um objeto de opções que pode incluir propriedades como modules e executablePath.
+
+Para Utilizar o `client.on` você declara ele juntamente com o `client` no `waMain`. 
+
+Lembre-se o `client.on` agora usa a sintaxe `clo`.
+```javascript
+const waMain = require('./waMain');
+
+const { client, clo } = waMain({
+    // ... opções aqui ...
+});
+
+// Manipulador de evento assíncrono
+clo('message', async (message) => {
+    // Lógica assíncrona aqui
+});
+
+// Manipulador de evento síncrono
+clo('outro-evento', (data) => {
+    // Lógica síncrona aqui
+});
+```
+É possivel alterar os eventos entre os disponíveis, usar ele como `assíncrono` ou `síncrono` 
 
 # Enviando Mensagens
 Depois de criar a instância do cliente, você pode usar as funções mMsg e mMsgs para enviar mensagens simples ou várias mensagens com base em palavras-chave, respectivamente.
@@ -88,6 +110,28 @@ const {client, MessageMedia} = waMain({
 });
 ```
 The waMain function accepts an options object that can include properties such as modules and executablePath.
+
+To use `client.on` you declare it together with `client` in `waMain`.
+
+Remember `client.on` now uses the `clo` syntax.
+```javascript
+const waMain = require('./waMain');
+
+const { client, clo } = waMain({
+     // ... options here ...
+});
+
+// Asynchronous event handler
+clo('message', async(message) => {
+     // Async logic here
+});
+
+// Synchronous event handler
+clo('other-event', (date) => {
+     // Synchronous logic here
+});
+```
+It is possible to change the events between those available, use it as `asynchronous` or `synchronous`
 
 # Sending Messages
 After creating the client instance, you can use the mMsg and mMsgs functions to send simple messages or multiple messages based on keywords, respectively.
